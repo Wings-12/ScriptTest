@@ -4,40 +4,112 @@ using UnityEngine;
 
 public class Test : MonoBehaviour {
 
-    void Hello()
-    {
-        Debug.Log("Hello, UnityChan");
-    }
+    //void Hello()
+    //{
+    //    Debug.Log("Hello, UnityChan");
+    //}
 
-    void Googbye()
-    {
-        Debug.Log("Goodbye, UnityChan");
-    }
+    //void Googbye()
+    //{
+    //    Debug.Log("Goodbye, UnityChan");
+    //}
 
-    int Add(int a, int b)
-    {
-        int c = a + b;
-        return c;
-    }
+    //int Add(int a, int b)
+    //{
+    //    int c = a + b;
+    //    return c;
+    //}
+
     public class Boss
     {
-        int hp = 100;
-        int power = 25;
+        private int hp = 100;
+        private int power = 25;
+        //・int型の変数mpを宣言し、53で初期化してください
+        private int mp = 53;
+        //・mpを消費して魔法攻撃をするMagic関数を作ってください
+        public void Magic()
+        {
+            //・Magic関数内でmpを5減らし、
+            mp -= 5;
+            //コンソールに
+            //「魔法攻撃をした。残りMPは〇〇。」と表示してください。mpが足りない場合、
+            if (mp > 0)
+            {
+            Debug.Log("魔法攻撃をした。残りMPは" + mp + "。");
+            }
+            //「MPが足りないため魔法が使えない。」と表示してください
+            else
+            {
+                Debug.Log("MPが足りないため魔法が使えない。");
+            }
+        }
 
         public void Attack()
         {
-
+            Debug.Log(this.power + "のダメージを与えた");
         }
 
-        public void Defence()
+        public void Defence(int damage)
         {
-
+            Debug.Log(damage + "のダメージを受けた");
+            this.hp -= damage;
         }
     }
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        //    下記の条件を満たしてください
+
+        //要素の個数が5の、int型の配列arrayを宣言して好きな値で初期化してください
+        int[] array = { 7, 8, 9, 10, 11 };
+        //配列の各要素の値を順番に表示してください
+        for (int i = 0; i < array.Length; i++)
+        {
+            Debug.Log(array[i]);
+        }
+        //for文を使い、配列の各要素の値を逆順に表示してください
+        for (int j = array.Length -1; 0 <= j; j--) 
+            //　　　　　　↑array.Length -1のように
+            //配列の数が変わってもいちいち
+            //書き直さなくてもよいようにするためにはどうすればいいのか考える
+        {
+            Debug.Log(array[j]);
+        }
+
+        Boss kabigon = new Boss();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+        kabigon.Magic();
+
+
+
+        //Boss lastboss = new Boss();
+
+        //lastboss.Attack();
+        //lastboss.Defence(3);
+
+        //Boss midboss = new Boss();
+        //midboss.Attack();
+        //midboss.Defence(5);
 
         // Debug.Log("Hello, World");
         //int score;
